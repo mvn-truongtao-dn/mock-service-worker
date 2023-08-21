@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { book } from "@/type";
 import BookList from "./components/BookList";
-import BookForm2 from "./components/BookForm2";
+import BookForm from "./components/BookForm";
 
 export default function Home() {
   const [data, setData] = useState<book>();
@@ -13,7 +13,7 @@ export default function Home() {
       </h1>
       <div className="flex flex-col w-1/2 m-auto">
         <div className="basis-4/12 mb-10">
-          <BookForm2 data={data} setData={setData} />
+          <BookForm data={data} setData={setData} />
         </div>
         <div className="basis-8/12">
           <BookList setData={setData} />

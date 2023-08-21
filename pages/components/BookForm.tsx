@@ -8,7 +8,7 @@ type BookFormProps = {
   setData: any;
 };
 
-export default function BookForm2({ data, setData }: BookFormProps) {
+export default function BookForm({ data, setData }: BookFormProps) {
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
