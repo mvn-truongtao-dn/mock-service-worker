@@ -1,4 +1,6 @@
 import { book } from "@/type";
+import { graphql } from "msw";
+import { rest } from "msw";
 import { v4 as uuidv4 } from "uuid";
 
 const books: book[] = [
@@ -11,9 +13,11 @@ const books: book[] = [
   },
 ];
 
-import { graphql } from "msw";
-
 export const handlers = [
+  // rest.get("user", (req, res, ctx) => {
+  //   return res(ctx.status(200), ctx.json([{ id: "1" }]));
+  // }),
+
   graphql.query("https://custom/api/getBooks", (req, res, ctx) => {
     return res(
       ctx.data({

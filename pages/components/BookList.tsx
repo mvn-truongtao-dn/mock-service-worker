@@ -1,6 +1,6 @@
 import { book } from "@/type";
 import { useMutation, useQuery } from "@apollo/client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BookDetail from "./BookDetail";
 import { GET_BOOKS } from "../graphql-client/queries";
 import { DELETE_BOOK } from "../graphql-client/mutations";
@@ -15,6 +15,14 @@ export default function BookList({ setData }: BookListProps) {
   const [active, setActive] = useState(false);
   const { data } = useQuery(GET_BOOKS);
   const [deleteBook] = useMutation(DELETE_BOOK);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const response = await fetch("http://localhost:3000/user");
+  //     const users = await response.json();
+  //     console.log(users);
+  //   })();
+  // }, []);
 
   return (
     <div className="bg-white p-5 rounded-lg">
